@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh; /* Ajuste para asegurar que ocupe toda la altura de la ventana */
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #00a896;
+  color: white;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacia uniformemente los elementos */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto; /* Agregar desplazamiento si el contenido de la sidebar es muy grande */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.sidebar ul .logout {
+  margin-top: auto; /* Coloca este elemento al final de la lista */
+}
+
+.main-content {
+  margin-left: 200px; /* Ajuste para dar espacio a la sidebar */
+  padding: 40px;
+  width: calc(100% - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+.icon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+}
+
+.icon-item {
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.icon-item:hover {
+  transform: translateY(-5px);
+}
+
+.icon-item i {
+  font-size: 40px;
+  color: #00a896;
+}
+
+.icon-item p {
+  margin-top: 10px;
+  color: #00a896;
+  font-size: 16px;
+}
+
+

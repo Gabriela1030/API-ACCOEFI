@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+.showcase {
+  width: 100%;
+  height: 350px;
+  background: url('../img/SHOWCASE36.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  color: #fff;
+  text-align: center;
+}
+
+.planes-precios {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.plan {
+  background-color: #fff;
+  border: 1px solid #00b894;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.funcionalidades {
+  margin: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flash-card {
+  width: 250px;
+  height: 150px;
+  margin: 20px;
+  perspective: 1000px;
+}
+
+.flash-card-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.flash-card:hover .flash-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flash-card-front,
+.flash-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flash-card-front {
+  background-color: #00b894;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.flash-card-back {
+  background-color: #00b894;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+.contacto {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.contacto ul {
+  margin-top: 10px;
+}
+
+.contacto ul li {
+  margin-bottom: 5px;
+  color: #000;
+}
