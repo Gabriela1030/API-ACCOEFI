@@ -11,11 +11,11 @@ include_once '../controllers/InventarioController.php';
 include_once '../controllers/ProveedorController.php';
 include_once '../controllers/UsuarioController.php';
 
-// Parseamos la URI para determinar qué controlador usar
+// Parseo la URI 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = explode('/', $uri);
 
-// Verificamos qué controlador utilizar basándonos en la primera parte del endpoint
+//   primera parte del endpoint
 if ($uri[1] === 'categoria') {
     include_once '../controllers/CategoriaController.php';
 } elseif ($uri[1] === 'cliente') {
