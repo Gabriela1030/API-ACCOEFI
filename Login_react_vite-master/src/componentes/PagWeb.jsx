@@ -4,9 +4,7 @@ import '../estilos/PagWeb.css';
 const PagWeb = () => {
   return (
     <div className="container">
-      <header className="showcase">
-        
-      </header>
+      <header className="showcase"></header>
       <section className="planes-precios">
         <h2>Planes y Precios</h2>
         <div className="plan">
@@ -67,4 +65,3 @@ const PagWeb = () => {
 };
 
 export default PagWeb;
-
