@@ -19,8 +19,7 @@ const InterfazApp = () => {
     { label: 'Lista de Clientes', path: '/clientes' },
     { label: 'Lista de Proveedores', path: '/proveedores' },
     { label: 'Lista de Productos', path: '/productos' },
-    { label: 'Configuración', path: '/configuracion' },
-    { label: 'Soporte', path: '/soporte' },
+
   ];
 
   return (

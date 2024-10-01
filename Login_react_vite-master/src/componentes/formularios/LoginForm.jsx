@@ -23,17 +23,17 @@ const LoginForm = () => {
       });
 
       const data = await response.json(); // Obtener respuesta como JSON
-
+      console.log(data.success);
       // Verificar éxito del inicio de sesión
       if (data.success) {
         alert('Inicio de sesión exitoso.'); // Mensaje de éxito
         navigate('/interfaz'); // Redirigir a la interfaz después de iniciar sesión
       } else {
-        alert(data.message || 'Ocurrió un error al iniciar sesión'); // Manejo de errores
+        alert(data.message || 'Se ha creado el usuario, inicia sesion'); // Manejo de errores
       }
     } catch (error) {
       console.error('Error en el fetch:', error); // Mostrar error en consola
-      alert('Ocurrió un problema durante el inicio de sesión.'); // Mensaje de error
+      alert('Se ha creado el usuario, inicia sesion'); // Mensaje de error
     }
   };
 
