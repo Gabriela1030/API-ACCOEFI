@@ -18,7 +18,7 @@ const RegistroClientes = () => {
     }
 
     try {
-      const response = await fetch('http://localhost/BACKEND-ACCOEFI/backend/models/ClienteController.php', {
+      const response = await fetch('http://localhost/BACKEND-ACCOEFI/backend/controllers/ClienteController.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,8 @@ const RegistroClientes = () => {
         setTelefono('');
         setDireccion('');
       } else {
-        setMensaje('Error al registrar el cliente');
+        const errorData = await response.json();
+        setMensaje(errorData.message || 'Error al registrar el cliente');
       }
     } catch (error) {
       setMensaje('Error de conexión con el servidor.');
@@ -82,7 +83,7 @@ const RegistroClientes = () => {
             required
           />
         </div>
-        <button type="submit">Registrar</button>
+        <button type="submit">Registrar Cliente</button>
       </form>
     </div>
   );

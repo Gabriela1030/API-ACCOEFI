@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Encabezado from '../Encabezado';
 import PagWeb from '../PagWeb';
 import LoginForm from '../formularios/LoginForm';
 import RegisterForm from '../formularios/RegisterForm';
@@ -15,7 +14,7 @@ import RegistroProveedores from '../formularios/RegistroProveedores';
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<><Encabezado /><PagWeb /></>} />
+      <Route path="/" element={<PagWeb />} />
       <Route path="/login" element={<LoginForm />} />
       <Route path="/register" element={<RegisterForm />} />
       <Route path="/interfaz" element={<InterfazApp />} />

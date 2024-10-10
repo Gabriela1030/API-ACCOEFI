@@ -14,7 +14,7 @@ body {
 .container {
   width: 100%;
   margin: auto;
-  padding: 20px;
+  padding: 10px; /* Reducido el padding */
 }
 
 .showcase {
@@ -25,7 +25,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 50px;
+  padding-bottom: 20px; /* Reducido el padding */
   color: #fff;
   text-align: center;
 }

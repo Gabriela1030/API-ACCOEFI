@@ -1,59 +1,29 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../estilos/InterfazApp.css';
+import '../estilos/Navbar.css'; // Asegúrate de tener tu archivo CSS para los estilos
 
-const InterfazApp = () => {
+const Encabezado = () => {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-   
-    navigate('/login');
+  const handleLogin = () => {
+    navigate('/login'); // Redirige al formulario de inicio de sesión
   };
 
   return (
-    <div className="app-container">
-      <nav className="sidebar">
-        <ul>
-          <li>Inicio</li>
-          <li>Informes</li>
-          <li>Transacciones</li>
-          <li className="logout" onClick={handleLogout}>Cerrar Sesión</li>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <ul className="navbar-menu">
+          <li onClick={() => navigate('/')}>Inicio</li>
+          
         </ul>
-      </nav>
-      <div className="main-content">
-        <div className="icon-container">
-          <div className="icon-item">
-            <i className="fas fa-users"></i>
-            <p>Registro de Clientes</p>
-          </div>
-          <div className="icon-item">
-            <i className="fas fa-truck"></i>
-            <p>Registro de Proveedores</p>
-          </div>
-          <div className="icon-item">
-            <i className="fas fa-user-tie"></i>
-            <p>Registrar Gasto</p>
-          </div>
-          <div className="icon-item">
-            <i className="fas fa-shopping-cart"></i>
-            <p>Registrar compra</p>
-          </div>
-          <div className="icon-item">
-            <i className="fas fa-arrow-down"></i>
-            <p>Registrar ingresos</p>
-          </div>
-          <div className="icon-item">
-            <i className="fas fa-file-invoice"></i>
-            <p>Crear Factura</p>
-          </div>
-          <div className="icon-item">
-            <i className="fas fa-boxes"></i>
-            <p>Control de Inventario</p>
-          </div>
-        </div>
       </div>
-    </div>
+      <div className="navbar-right">
+        <button className="login-button" onClick={handleLogin}>
+          Iniciar Sesión
+        </button>
+      </div>
+    </nav>
   );
 };
 
-export default InterfazApp;
+export default Encabezado;
