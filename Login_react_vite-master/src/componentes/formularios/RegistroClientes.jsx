@@ -6,7 +6,7 @@ const RegistroClientes = () => {
   const [email, setEmail] = useState('');
   const [telefono, setTelefono] = useState('');
   const [direccion, setDireccion] = useState('');
-  const [mensaje, setMensaje] = useState('');  // Estado para el mensaje de éxito o error
+  const [mensaje, setMensaje] = useState('');  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -1,19 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import '../estilos/Lista.css';
 
-
 const ListaClientes = () => {
   const [clientes, setClientes] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchClientes = async () => {
-      const response = await fetch('http://localhost/BACKEND-ACCOEFI/backend/models/Cliente.php');
-      const data = await response.json();
-      setClientes(data);
+      try {
+        const response = await fetch('http://localhost/BACKEND-ACCOEFI/backend/models/ClienteController.php');
+        if (!response.ok) {
+          throw new Error('Error en la solicitud a la API');
+        }
+        const data = await response.json();
+        setClientes(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchClientes();
   }, []);
+
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="lista-container">
