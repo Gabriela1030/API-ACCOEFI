@@ -1,0 +1,25 @@
+.soporte-container {
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .soporte-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .soporte-container ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+  }
+  
+  .soporte-container ul li {
+    margin-bottom: 5px; /* Espacio entre elementos de la lista */
+    color: #333; /* Color del texto */
+  }
+  

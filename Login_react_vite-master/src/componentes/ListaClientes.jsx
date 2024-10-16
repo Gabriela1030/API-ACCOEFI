@@ -9,7 +9,7 @@ const ListaClientes = () => {
   useEffect(() => {
     const fetchClientes = async () => {
       try {
-        const response = await fetch('http://localhost/BACKEND-ACCOEFI/backend/models/ClienteController.php');
+        const response = await fetch('http://localhost/BACKEND-ACCOEFI/backend/controllers/ClienteController.php');
         if (!response.ok) {
           throw new Error('Error en la solicitud a la API');
         }
@@ -25,6 +25,26 @@ const ListaClientes = () => {
     fetchClientes();
   }, []);
 
+  const handleEdit = (id) => {
+    
+  };
+
+  const handleDelete = async (id) => {
+    const response = await fetch(`http://localhost/BACKEND-ACCOEFI/backend/controllers/ClienteController.php`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id }),
+    });
+
+    if (response.ok) {
+      setClientes(clientes.filter(cliente => cliente.id !== id)); // Actualiza el estado para eliminar el cliente de la lista
+    } else {
+      console.error('Error al eliminar el cliente');
+    }
+  };
+
   if (loading) {
     return <div>Cargando...</div>;
   }
@@ -39,7 +59,13 @@ const ListaClientes = () => {
       <ul className="lista">
         {clientes.map((cliente) => (
           <li key={cliente.id}>
-            {cliente.nombre} - {cliente.direccion} - {cliente.telefono} - {cliente.email}
+            <div className="info">
+              {cliente.nombre} - {cliente.direccion} - {cliente.telefono} - {cliente.email}
+            </div>
+            <div className="acciones">
+              <button className="btn-editar" onClick={() => handleEdit(cliente.id)}>Editar</button>
+              <button className="btn-eliminar" onClick={() => handleDelete(cliente.id)}>Eliminar</button>
+            </div>
           </li>
         ))}
       </ul>

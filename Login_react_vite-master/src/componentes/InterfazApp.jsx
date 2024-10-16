@@ -6,11 +6,11 @@ const InterfazApp = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Aquí podrías agregar lógica para limpiar el estado de autenticación si es necesario.
+  
     navigate('/login');
   };
 
-  // Define un array con las rutas y nombres para evitar repetición
+
   const menuItems = [
     { label: 'Inicio', path: '/' },
     { label: 'Registro de Clientes', path: '/registro-clientes' },
@@ -19,7 +19,6 @@ const InterfazApp = () => {
     { label: 'Lista de Clientes', path: '/clientes' },
     { label: 'Lista de Proveedores', path: '/proveedores' },
     { label: 'Lista de Productos', path: '/productos' },
-
   ];
 
   return (
