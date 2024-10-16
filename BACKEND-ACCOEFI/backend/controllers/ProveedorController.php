@@ -31,7 +31,7 @@ switch($request_method) {
         }
         echo json_encode($proveedores_arr);
         break;
-    
+
     case 'POST':
         $data = json_decode(file_get_contents("php://input"));
         $proveedor->nombre = $data->nombre;
@@ -41,9 +41,9 @@ switch($request_method) {
         $proveedor->fecha_registro = date('Y-m-d H:i:s');
 
         if($proveedor->create()) {
-            echo json_encode(array("message" => "Proveedor creado."));
+            echo json_encode(array("success" => true, "message" => "Proveedor creado."));
         } else {
-            echo json_encode(array("message" => "No se pudo crear el proveedor."));
+            echo json_encode(array("success" => false, "message" => "No se pudo crear el proveedor."));
         }
         break;
 
@@ -72,6 +72,12 @@ switch($request_method) {
             echo json_encode(array("message" => "No se pudo eliminar el proveedor."));
         }
         break;
+
+    default:
+        echo json_encode(array("message" => "Método no permitido."));
+        break;
+}
+?>
 
     default:
         echo json_encode(array("message" => "Método no permitido."));
