@@ -1,0 +1,52 @@
+/* Configuración general */
+.configuracion-container {
+  background-color: #fff;
+  color: #333;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Opciones individuales */
+.opciones {
+  display: flex;
+  flex-direction: column;
+}
+
+.opcion {
+  margin-bottom: 1rem;
+}
+
+.opcion label {
+  font-weight: bold;
+  color: #00b894;
+  margin-right: 1rem;
+}
+
+.opcion button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #00b894;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.opcion button:hover {
+  background-color: #019d80;
+}
+
+/* Modo oscuro */
+.modo-oscuro {
+  background-color: #333;
+  color: #fff;
+}
+
+body.modo-oscuro {
+  background-color: #333;
+  color: #fff;
+}

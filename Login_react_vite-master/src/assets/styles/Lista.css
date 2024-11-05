@@ -1,0 +1,53 @@
+.lista-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.lista {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lista li {
+  background-color: #e0f7fa; /* Color de fondo similar al de la imagen */
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista li strong {
+  font-weight: bold;
+}
+
+.lista button {
+  background-color: #FF6F61; /* Color rojo para eliminar */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.lista button:first-child {
+  background-color: #4CAF50; /* Color verde para editar */
+}
+
+.lista button:hover {
+  opacity: 0.8;
+}
+
+.mensaje-error {
+  color: red;
+  font-weight: bold;
+}

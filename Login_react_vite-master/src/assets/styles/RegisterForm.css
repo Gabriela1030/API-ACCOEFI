@@ -1,0 +1,93 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00b894, #c0ded5); /* Degradado verde menta */
+}
+
+/* Formulario de registro */
+.register-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Logo en el formulario de registro */
+.register-form .nav-brand {
+  width: 150px;
+  margin-bottom: 1.5rem;
+}
+
+/* Grupo de campos del formulario */
+.register-form .form-group {
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: left;
+}
+
+/* Etiquetas para los campos del formulario */
+.register-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #00b894;
+}
+
+/* Campos de entrada de texto, correo electrónico y contraseña */
+.register-form .form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Botón de registro */
+.register-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #00b894;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+/* Botón de registro al pasar el cursor */
+.register-form button:hover {
+  background-color: #019d80;
+}
+
+/* Enlace de inicio de sesión */
+.register-form .login-link {
+  margin-top: 1rem;
+  color: #00b894;
+}
+
+/* Enlace de inicio de sesión: estilos del enlace */
+.register-form .login-link a {
+  color: #00b894;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Enlace de inicio de sesión: estilos del enlace al pasar el cursor */
+.register-form .login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Mensaje de éxito o error */
+.mensaje {
+  color: red; /* Puedes cambiar a verde si es mensaje de éxito */
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
