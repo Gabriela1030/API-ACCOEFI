@@ -9,11 +9,11 @@ const Soporte = () => {
       <div className="soporte-opciones">
         <div className="soporte-opcion">
           <h3>Email</h3>
-          <p>soporte@tuapp.com</p>
+          <p>soporte@accoefi.com</p>
         </div>
         <div className="soporte-opcion">
           <h3>Teléfono</h3>
-          <p>+123 456 7890</p>
+          <p>320 456 7890</p>
         </div>
       </div>
     </div>

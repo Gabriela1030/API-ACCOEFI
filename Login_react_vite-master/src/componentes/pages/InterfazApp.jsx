@@ -1,39 +1,63 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaHome, FaUser, FaBox, FaUsers, FaCog, FaLifeRing, FaSignOutAlt } from 'react-icons/fa';
+import {
+  FaHome,
+  FaUser,
+  FaBox,
+  FaUsers,
+  FaCog,
+  FaLifeRing,
+  FaSignOutAlt,
+} from 'react-icons/fa';
 import '../../assets/styles/InterfazApp.css';
 
 const InterfazApp = () => {
   const navigate = useNavigate();
 
+  // Estado para almacenar los datos
   const [data, setData] = useState({
     totalInventario: 0,
     clientesActivos: 0,
     proveedores: 0,
   });
 
+  // Función para obtener los datos de las listas
   const fetchData = async () => {
     try {
-      const response = await fetch('https://api.tuservidor.com/estadisticas'); // URL de tu API
-      const result = await response.json();
+      // Obtener la lista de clientes
+      const clientesResponse = await fetch('http://localhost/BACKEND-ACCOEFI/backend/controllers/ClienteController.php');
+      const clientesData = await clientesResponse.json();
+
+      // Obtener la lista de proveedores
+      const proveedoresResponse = await fetch('http://localhost/BACKEND-ACCOEFI/backend/controllers/ProveedorController.php');
+      const proveedoresData = await proveedoresResponse.json();
+
+      // Obtener la lista de productos (inventario)
+      const productosResponse = await fetch('http://localhost/BACKEND-ACCOEFI/backend/controllers/ProductoController.php');
+      const productosData = await productosResponse.json();
+
+      // Actualizar el estado con los datos obtenidos
       setData({
-        totalInventario: result.totalInventario,
-        clientesActivos: result.clientesActivos,
-        proveedores: result.proveedores,
+        totalInventario: productosData.length,
+        clientesActivos: clientesData.length,
+        proveedores: proveedoresData.length,
       });
     } catch (error) {
-      console.error("Error al obtener los datos:", error);
+      console.error('Error al obtener los datos:', error);
     }
   };
 
+  // Llamar a la función fetchData cuando el componente se monta
   useEffect(() => {
     fetchData();
   }, []);
 
+  // Función para cerrar sesión
   const handleLogout = () => {
     navigate('/login');
   };
 
+  // Elementos del menú
   const menuItems = [
     { label: 'Inicio', path: '/', icon: <FaHome /> },
     { label: 'Registro de Clientes', path: '/registro-clientes', icon: <FaUser /> },
@@ -43,7 +67,7 @@ const InterfazApp = () => {
     { label: 'Lista de Proveedores', path: '/proveedores', icon: <FaUsers /> },
     { label: 'Lista de Productos', path: '/productos', icon: <FaBox /> },
     { label: 'Configuración', path: '/configuracion', icon: <FaCog /> },
-    { label: 'Soporte', path: '/soporte', icon: <FaLifeRing /> }
+    { label: 'Soporte', path: '/soporte', icon: <FaLifeRing /> },
   ];
 
   return (
@@ -85,7 +109,7 @@ const InterfazApp = () => {
           </div>
           <div className="activity">
             <h3>Actividad Reciente</h3>
-            <p>Aquí se mostraría una lista o tabla con las actividades recientes relacionadas con inventario, clientes y proveedores.</p>
+            <p></p>
           </div>
         </div>
       </div>
